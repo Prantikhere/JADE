@@ -1,6 +1,68 @@
 # JADE - JIL Adapter For DAG Engine
-Reference Architecture for JIL to DAG Conversion
-## Reference Architecture - JADE
+
+## What is JIL and DAG ?
+
+This document provides a brief explanation of JIL and DAG, two concepts commonly used in data processing and workflow management.
+
+### JIL: Job Intermediate Language
+
+JIL stands for **Job Intermediate Language**. It's a language used to define and describe data processing jobs, specifically within the context of the Apache Hadoop ecosystem. 
+
+**Key features of JIL:**
+
+* **Declarative:** JIL focuses on describing *what* needs to be done rather than *how* to do it. This allows for flexibility and abstraction.
+* **Platform-independent:** JIL jobs can be executed on various Hadoop platforms, including Apache Hadoop, Apache Spark, and Apache Flink.
+* **Extensible:** JIL supports custom operators and transformations, enabling users to tailor jobs to specific needs.
+
+**Example JIL Job:**
+
+```
+job "WordCount" {
+  input "input_data" {
+    type "text"
+    path "/path/to/input/data"
+  }
+  output "output_data" {
+    type "text"
+    path "/path/to/output/data"
+  }
+  transform "WordCounter" {
+    input "input_data"
+    output "output_data"
+  }
+}
+```
+
+This JIL job defines a word count job with input and output paths and a custom operator "WordCounter".
+
+### DAG: Directed Acyclic Graph
+
+DAG stands for **Directed Acyclic Graph**. It's a type of graph where nodes represent tasks or operations, and edges represent dependencies between them. 
+
+**Key characteristics of DAGs:**
+
+* **Directed:** Edges have direction, indicating the order of execution.
+* **Acyclic:** There are no cycles, meaning a task cannot depend on itself directly or indirectly.
+* **Workflow Representation:** DAGs are commonly used to represent workflows, where each node represents a step in the process.
+
+**Example DAG:**
+
+```
+   A -> B -> C
+      \-> D -> E
+```
+
+This DAG represents a workflow with five tasks (A, B, C, D, and E). Task A must be completed before tasks B and D. Task B must be completed before task C, and task D must be completed before task E.
+This DAG approach is being adoped and implemented in **APACHE AIRFLOW**, for batch job scheduling purpose. 
+
+**Conclusion:**
+
+JIL and DAG are powerful tools for data processing and workflow management. JIL provides a declarative and platform-independent way to define jobs, while DAGs provide a flexible and scalable way to structure and execute complex workflows. Understanding these concepts is crucial for anyone working with large-scale data processing projects.
+
+## How to address this situation ? 
+JADE is the proposed solution for this situation 
+
+**Reference Architecture - JADE**
 
 This architecture outlines the workflow for processing Autosys JIL files using a serverless approach on AWS. 
 ![image](https://github.com/user-attachments/assets/c7f459f8-304b-4c2a-ae4e-cf8edff1aea3)
