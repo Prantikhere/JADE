@@ -1,4 +1,4 @@
-# JADE
+# JADE - JIL Adapter For DAG Engine
 Reference Architecture for JIL to DAG Conversion
 ## Reference Architecture - JADE
 
