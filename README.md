@@ -1,4 +1,4 @@
-# JADE - JIL Adapter For DAG Engine
+# JIL Adapter For DAG Engine
 
 ## What ? ---- JIL for Autosys and DAG for Airflow: Workflow Management in Action
 
