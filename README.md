@@ -72,7 +72,10 @@ Both JIL for Autosys and DAG for Airflow are used to define and manage workflows
 * **JIL:**  Is a scripting language, focusing on defining jobs and their dependencies. It's integrated within Autosys's scheduler and management framework.
 * **DAG:** Is a visual and programmatic representation of a workflow, designed to be highly flexible and extensible. It's part of a dedicated platform (Airflow) that handles scheduling, monitoring, and more.
 
-## Want to move out from Autosys  due to high licence cost ? A Case for Open Source Workflow Management
+
+  
+
+## Want to move out from Autosys  due to high licence cost (More than a billion $ market ) ? A Case for Open Source Workflow Management
 
 Autosys, a longstanding solution for job scheduling and workload automation, has been a mainstay for many organizations. However, recent changes in licensing from Broadcom, the current owner of CA Technologies, have prompted many to consider alternative solutions. This document outlines compelling reasons why migrating from Autosys to Airflow, an open-source workflow management platform, might be a smart move.
 
